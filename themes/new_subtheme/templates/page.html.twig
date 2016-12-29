@@ -97,6 +97,15 @@
   {% endblock %}
 {% endif %}
 
+{# Map #}
+      {% if page.map %}
+        {% block map %}
+          <div class="col-sm-12" role="map">
+            {{ page.map }}
+          </div>
+        {% endblock %}
+      {% endif %}
+
 {# Main #}
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
@@ -177,6 +186,17 @@
     </div>
   </div>
 {% endblock %}
+<div class="logo-container">
+{# logo #}
+      {% if page.logo %}
+        {% block logo %}
+          <div class="main-container container js-quickedit-main-content" role="logo">
+            {{ page.logo }}
+          </div>
+        {% endblock %}
+      {% endif %}
+</div>
+
 <div class="footer_container">
 {% if page.footer %}
   {% block footer %}

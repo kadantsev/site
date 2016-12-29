@@ -186,6 +186,18 @@
     </div>
   </div>
 {% endblock %}
+
+<div class="logo-container">
+{# logo #}
+      {% if page.logo %}
+        {% block logo %}
+          <div class="main-container container js-quickedit-main-content" role="logo">
+            {{ page.logo }}
+          </div>
+        {% endblock %}
+      {% endif %}
+</div>
+
 <div class="footer_container">
 {% if page.footer %}
   {% block footer %}
