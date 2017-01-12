@@ -1,0 +1,10 @@
+name: aliases
+description: 'Added aliases for all entities.'
+type: module
+core: 8.x
+dependencies:
+  - ctools
+  - node
+  - pathauto
+  - taxonomy
+  - user

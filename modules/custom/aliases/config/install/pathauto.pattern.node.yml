@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node
+label: Node
+type: 'canonical_entities:node'
+pattern: '/[node:content-type]/[node:title]'
+selection_criteria:
+  b26edd03-c76e-4af1-8c59-a7b175989ff2:
+    id: node_type
+    bundles:
+      article: article
+      blog: blog
+      feature: feature
+      logo: logo
+      page: page
+      place: place
+      post: post
+    negate: false
+    context_mapping:
+      node: node
+    uuid: b26edd03-c76e-4af1-8c59-a7b175989ff2
+selection_logic: and
+weight: -10
+relationships: {  }
