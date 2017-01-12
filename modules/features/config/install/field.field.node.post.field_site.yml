@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_site
+    - node.type.post
+  module:
+    - link
+id: node.post.field_site
+field_name: field_site
+entity_type: node
+bundle: post
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

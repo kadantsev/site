@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.post_category
+id: post
+label: Post
+vocabulary: post_category
+menu: main
+expanded: false
+depth: 0
+menu_parent: 'main:views_view:views.posts.page_1'

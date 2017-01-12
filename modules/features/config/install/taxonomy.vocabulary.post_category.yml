@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Post category'
+vid: post_category
+description: ''
+hierarchy: 0
+weight: 0
