@@ -1,8 +1,8 @@
 excluded:
   - core.base_field_override.node.post.promote
-  - core.entity_form_display.node.post.default
   - core.entity_view_display.node.post.default
-  - core.entity_view_display.node.post.teaser
-  - core.entity_view_display.node.post.teaser_with_link
   - image.style.280x210
+  - field.field.node.post.field_page
+  - field.field.paragraph.video.field_video
+  - field.field.paragraph.video.field_vimeo
 required: true
