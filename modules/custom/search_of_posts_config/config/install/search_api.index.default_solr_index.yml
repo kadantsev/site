@@ -1,0 +1,151 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - field.storage.node.field_category
+    - search_api.server.solr_server
+  module:
+    - taxonomy
+    - user
+    - search_api
+    - node
+id: default_solr_index
+name: Post
+description: 'Default content index created by the Solr Search Defaults module'
+read_only: false
+field_settings:
+  aggregated_field_1:
+    label: 'Fulltext Post search'
+    property_path: aggregated_field
+    type: text
+    configuration:
+      type: union
+      fields:
+        - 'entity:node/field_category'
+        - 'entity:node/field_tags'
+        - 'entity:node/title'
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 8
+  created:
+    label: 'Authored on'
+    datasource_id: 'entity:node'
+    property_path: created
+    type: date
+  status:
+    label: 'Publishing status'
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+  field_tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+  author:
+    label: 'Author name'
+    datasource_id: 'entity:node'
+    property_path: 'uid:entity:name'
+    type: string
+    dependencies:
+      module:
+        - user
+  uid:
+    label: 'Author ID'
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+  field_category:
+    label: Category
+    datasource_id: 'entity:node'
+    property_path: field_category
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_category
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - post
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  ignorecase:
+    fields:
+      - aggregated_field_1
+      - title
+      - field_tags
+      - author
+      - field_category
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  rendered_item:
+    plugin_id: rendered_item
+    settings:
+      weights:
+        add_properties: 0
+        pre_index_save: -10
+  aggregated_field:
+    plugin_id: aggregated_field
+    settings:
+      weights:
+        add_properties: 20
+  tokenizer:
+    fields:
+      - aggregated_field_1
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+  transliteration:
+    fields:
+      - aggregated_field_1
+      - title
+      - field_tags
+      - author
+      - field_category
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  add_url:
+    plugin_id: add_url
+    settings:
+      weights:
+        preprocess_index: -30
+  node_status:
+    plugin_id: node_status
+    settings:
+      weights:
+        preprocess_index: -10
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr_server

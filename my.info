@@ -1,0 +1,23 @@
+name = MyProfile
+description = Important modules.
+core = 8.x
+
+dependencies[] = devel
+dependencies[] = devel_generate
+dependencies[] = features_ui
+dependencies[] = web_profiler
+dependencies[] = colorbox
+dependencies[] = backup_and_migrate
+dependencies[] = pathauto
+dependencies[] = redirect
+dependencies[] = token
+dependencies[] = subpathauto
+dependencies[] = panels
+dependencies[] = paragraphs
+dependencies[] = rules
+dependencies[] = search_api
+dependencies[] = facets
+dependencies[] = google_analytics
+dependencies[] = video_embed_field
+dependencies[] = recaptcha
+

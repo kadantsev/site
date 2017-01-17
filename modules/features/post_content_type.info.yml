@@ -1,0 +1,19 @@
+name: 'Post content type'
+description: 'Created content type Post, role Blogger, views for Post'
+type: module
+core: 8.x
+dependencies:
+  - ckeditor
+  - editor
+  - field
+  - filter
+  - image
+  - link
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - taxonomy_menu
+  - text
+  - user
+  - views
