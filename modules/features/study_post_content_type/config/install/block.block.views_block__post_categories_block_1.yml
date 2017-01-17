@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.post_categories
+  module:
+    - views
+  theme:
+    - new_subtheme
+id: views_block__post_categories_block_1
+theme: new_subtheme
+region: sidebar_second
+weight: -21
+provider: null
+plugin: 'views_block:post_categories-block_1'
+settings:
+  id: 'views_block:post_categories-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

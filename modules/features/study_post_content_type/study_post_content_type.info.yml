@@ -1,0 +1,26 @@
+name: 'Study Post content type'
+description: 'Created content type Post, role Blogger, views for Post'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - ckeditor
+  - comment
+  - datetime
+  - editor
+  - entity_reference_revisions
+  - field
+  - filter
+  - image
+  - link
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - post_content_type
+  - study_search_of_posts_config
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x

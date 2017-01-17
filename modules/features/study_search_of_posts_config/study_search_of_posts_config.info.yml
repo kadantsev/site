@@ -1,0 +1,22 @@
+name: 'Study Search of posts config'
+description: 'Search of posts, captcha for comments in post,'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - captcha
+  - comment
+  - facets
+  - field
+  - node
+  - search_api
+  - search_api_db
+  - search_api_solr
+  - search_of_posts_config
+  - system
+  - taxonomy
+  - taxonomy_menu
+  - text
+  - user
+  - views
+version: 8.x
