@@ -72,26 +72,10 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_category
-datasource_settings:
-  'entity:node':
-    bundles:
-      default: false
-      selected:
-        - post
-    languages:
-      default: true
-      selected: {  }
 processor_settings:
   ignorecase:
-    fields:
-      - aggregated_field_1
-      - title
-      - field_tags
-      - author
-      - field_category
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
+    plugin_id: ignorecase
+    settings: {  }
   rendered_item:
     plugin_id: rendered_item
     settings:
@@ -104,25 +88,14 @@ processor_settings:
       weights:
         add_properties: 20
   tokenizer:
-    fields:
-      - aggregated_field_1
-      - title
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
-    weights:
-      preprocess_index: -6
-      preprocess_query: -6
+    plugin_id: tokenizer
+    settings:
+      spaces: ''
+      overlap_cjk: true
+      minimum_word_size: 3
   transliteration:
-    fields:
-      - aggregated_field_1
-      - title
-      - field_tags
-      - author
-      - field_category
-    weights:
-      preprocess_index: -10
-      preprocess_query: -10
+    plugin_id: transliteration
+    settings: {  }
   add_url:
     plugin_id: add_url
     settings:
@@ -134,18 +107,29 @@ processor_settings:
       weights:
         preprocess_index: -10
   highlight:
-    highlight: always
-    highlight_partial: false
-    excerpt: true
-    excerpt_length: 256
-    exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
-    weights:
-      postprocess_query: 0
-tracker_settings:
-  default: {  }
+    plugin_id: highlight
+    settings:
+      prefix: '<strong>'
+      suffix: '</strong>'
+      excerpt: true
+      excerpt_length: 256
+      highlight: always
+      exclude_fields: {  }
 options:
   index_directly: true
   cron_limit: 50
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+tracker_settings:
+  default:
+    plugin_id: default
+    settings: {  }
 server: solr_server

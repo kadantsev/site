@@ -1,1 +1,7 @@
+excluded:
+  - block.block.bartik_main_menu
+  - block.block.bootstrap_sass_main_menu
+  - block.block.new_subtheme_main_menu
+  - taxonomy_menu.taxonomy_menu.categories
+  - taxonomy_menu.taxonomy_menu.locations
 required: true

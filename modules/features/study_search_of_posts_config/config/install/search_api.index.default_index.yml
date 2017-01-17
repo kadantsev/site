@@ -79,67 +79,58 @@ field_settings:
     type: integer
     indexed_locked: true
     type_locked: true
-datasource_settings:
-  'entity:node':
-    bundles:
-      default: false
-      selected:
-        - post
-    languages:
-      default: true
-      selected: {  }
 processor_settings:
   ignorecase:
-    fields:
-      - title
-    weights:
-      preprocess_index: -5
-      preprocess_query: -8
+    plugin_id: ignorecase
+    settings: {  }
   rendered_item:
-    weights:
-      add_properties: 0
-      pre_index_save: -10
+    plugin_id: rendered_item
+    settings: {  }
   aggregated_field:
-    weights:
-      add_properties: 20
+    plugin_id: aggregated_field
+    settings: {  }
   content_access:
-    weights:
-      preprocess_index: -6
-      preprocess_query: -4
+    plugin_id: content_access
+    settings: {  }
   tokenizer:
-    fields:
-      - title
-    spaces: ''
-    overlap_cjk: 1
-    minimum_word_size: '3'
-    weights:
-      preprocess_index: -2
-      preprocess_query: -5
+    plugin_id: tokenizer
+    settings:
+      spaces: ''
+      overlap_cjk: true
+      minimum_word_size: 3
   transliteration:
-    fields:
-      - title
-    weights:
-      preprocess_index: -4
-      preprocess_query: -7
+    plugin_id: transliteration
+    settings: {  }
   add_url:
-    weights:
-      preprocess_index: -30
+    plugin_id: add_url
+    settings: {  }
   node_status:
-    weights:
-      preprocess_index: -10
+    plugin_id: node_status
+    settings: {  }
   highlight:
-    highlight: always
-    highlight_partial: false
-    excerpt: true
-    excerpt_length: 256
-    exclude_fields: {  }
-    prefix: '<strong>'
-    suffix: '</strong>'
-    weights:
-      postprocess_query: 0
-tracker_settings:
-  default: {  }
+    plugin_id: highlight
+    settings:
+      prefix: '<strong>'
+      suffix: '</strong>'
+      excerpt: true
+      excerpt_length: 256
+      highlight: always
+      exclude_fields: {  }
 options:
   index_directly: true
   cron_limit: 50
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+tracker_settings:
+  default:
+    plugin_id: default
+    settings: {  }
 server: default_server

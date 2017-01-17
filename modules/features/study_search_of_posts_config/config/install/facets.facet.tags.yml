@@ -3,15 +3,13 @@ status: true
 dependencies:
   config:
     - views.view.post_search_solr
-  module:
-    - views
 id: tags
 name: Tags
 url_alias: tags
 weight: 0
-min_count: 1
 show_only_one_result: false
 field_identifier: field_tags
+query_type_name: null
 facet_source_id: 'views_page:post_search_solr__page_1'
 widget:
   type: dropdown
@@ -19,10 +17,6 @@ widget:
     show_numbers: false
     default_option_label: Choose
 query_operator: or
-use_hierarchy: false
-expand_hierarchy: false
-enable_parent_when_child_gets_disabled: true
-hard_limit: 0
 exclude: false
 only_visible_when_facet_source_is_visible: true
 processor_configs:
@@ -52,3 +46,4 @@ processor_configs:
     settings: {  }
 empty_behavior:
   behavior: none
+facet_configs: {  }
