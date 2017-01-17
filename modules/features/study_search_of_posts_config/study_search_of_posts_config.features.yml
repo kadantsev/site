@@ -4,4 +4,6 @@ excluded:
   - block.block.new_subtheme_main_menu
   - taxonomy_menu.taxonomy_menu.categories
   - taxonomy_menu.taxonomy_menu.locations
+  - system.menu.main
+  - core.entity_view_mode.node.search_index
 required: true
