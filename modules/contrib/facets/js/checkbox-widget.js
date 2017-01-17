@@ -21,8 +21,6 @@
     // Find all checkbox facet links and give them a checkbox.
     var $links = $('.js-facets-checkbox-links .facet-item a');
     $links.once('facets-checkbox-transform').each(Drupal.facets.makeCheckbox);
-    // Set indeterminate value on parents having an active trail.
-    $('.facet-item--expanded.facet-item--active-trail > input').prop("indeterminate", true);
   };
 
   /**
@@ -35,13 +33,10 @@
     var href = $link.attr('href');
     var id = $link.data('drupal-facet-item-id');
 
-    var checkbox = $('<input type="checkbox" class="facets-checkbox">')
-      .attr('id', id)
-      .data($link.data())
-      .data('facetsredir', href);
+    var checkbox = $('<input type="checkbox" class="facets-checkbox" id="' + id + '" data-facetsredir="' + href + '" />');
     var label = $('<label for="' + id + '">' + description + '</label>');
 
-    checkbox.on('change.facets', function (e) {
+    checkbox.change(function (e) {
       Drupal.facets.disableFacet($link.parents('.js-facets-checkbox-links'));
       window.location.href = $(this).data('facetsredir');
     });
@@ -51,7 +46,7 @@
       label.find('.js-facet-deactivate').remove();
     }
 
-    $link.before(checkbox).before(label).remove();
+    $link.before(checkbox).before(label).hide();
 
   };
 

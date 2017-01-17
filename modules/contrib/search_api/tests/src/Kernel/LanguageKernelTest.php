@@ -4,6 +4,7 @@ namespace Drupal\Tests\search_api\Kernel;
 
 use Drupal\Component\Render\FormattableMarkup;
 use Drupal\entity_test\Entity\EntityTestMulRevChanged;
+use Drupal\entity_test\Entity\EntityTestMul;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\KernelTests\KernelTestBase;
@@ -136,10 +137,16 @@ class LanguageKernelTest extends KernelTestBase {
       'id' => 'test_index',
       'status' => 1,
       'datasource_settings' => array(
-        'entity:' . $this->testEntityTypeId => array(),
+        'entity:' . $this->testEntityTypeId => array(
+          'plugin_id' => 'entity:' . $this->testEntityTypeId,
+          'settings' => array(),
+        ),
       ),
       'tracker_settings' => array(
-        'default' => array(),
+        'default' => array(
+          'plugin_id' => 'default',
+          'settings' => array(),
+        ),
       ),
       'field_settings' => array(
         'link' => array(

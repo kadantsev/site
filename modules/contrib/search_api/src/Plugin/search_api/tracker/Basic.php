@@ -180,7 +180,7 @@ class Basic extends TrackerPluginBase {
     }
     catch (\Exception $e) {
       watchdog_exception('search_api', $e);
-      $transaction->rollBack();
+      $transaction->rollback();
     }
   }
 
@@ -204,7 +204,7 @@ class Basic extends TrackerPluginBase {
     }
     catch (\Exception $e) {
       watchdog_exception('search_api', $e);
-      $transaction->rollBack();
+      $transaction->rollback();
     }
   }
 
@@ -223,7 +223,7 @@ class Basic extends TrackerPluginBase {
     }
     catch (\Exception $e) {
       watchdog_exception('search_api', $e);
-      $transaction->rollBack();
+      $transaction->rollback();
     }
   }
 
@@ -245,7 +245,7 @@ class Basic extends TrackerPluginBase {
     }
     catch (\Exception $e) {
       watchdog_exception('search_api', $e);
-      $transaction->rollBack();
+      $transaction->rollback();
     }
   }
 
@@ -268,7 +268,7 @@ class Basic extends TrackerPluginBase {
     }
     catch (\Exception $e) {
       watchdog_exception('search_api', $e);
-      $transaction->rollBack();
+      $transaction->rollback();
     }
   }
 
@@ -286,7 +286,7 @@ class Basic extends TrackerPluginBase {
     }
     catch (\Exception $e) {
       watchdog_exception('search_api', $e);
-      $transaction->rollBack();
+      $transaction->rollback();
     }
   }
 

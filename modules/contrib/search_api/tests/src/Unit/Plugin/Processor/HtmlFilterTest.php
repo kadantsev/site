@@ -136,14 +136,6 @@ class HtmlFilterTest extends UnitTestCase {
         ),
         TRUE,
       ),
-      // Test fault tolerance.
-      array(
-        'a < b',
-        array(
-          Utility::createTextToken('a < b'),
-        ),
-        TRUE,
-      ),
     );
   }
 

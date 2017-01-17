@@ -173,7 +173,7 @@ class OtherFacet extends ConditionPluginBase implements ContainerFactoryPluginIn
     // The block plugin id is saved in the schema: BasePluginID:FacetID. This
     // means we can explode the ID on ':' and the facet id is in the last part
     // of that result.
-    $block_plugin_id = $block_plugin->getPluginId();
+    $block_plugin_id  = $block_plugin->getPluginId();
     $facet_id = explode(PluginBase::DERIVATIVE_SEPARATOR, $block_plugin_id)[1];
 
     /** @var \Drupal\facets\FacetInterface $facet */
@@ -194,10 +194,7 @@ class OtherFacet extends ConditionPluginBase implements ContainerFactoryPluginIn
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
-    $config = [
-      'facets' => '',
-      'facet_value' => '',
-    ];
+    $config = ['facets' => FALSE, 'facet_value' => FALSE];
     return $config + parent::defaultConfiguration();
   }
 

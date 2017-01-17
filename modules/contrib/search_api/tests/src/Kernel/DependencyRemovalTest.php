@@ -62,10 +62,16 @@ class DependencyRemovalTest extends KernelTestBase {
       'id' => 'test_index',
       'name' => 'Test index',
       'tracker_settings' => array(
-        'default' => array(),
+        'default' => array(
+          'plugin_id' => 'default',
+          'settings' => array(),
+        ),
       ),
       'datasource_settings' => array(
-        'entity:user' => array(),
+        'entity:user' => array(
+          'plugin_id' => 'entity:user',
+          'settings' => array(),
+        ),
       ),
     ));
 

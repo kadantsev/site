@@ -20,12 +20,11 @@
   Drupal.facets.makeDropdown = function () {
     // Find all dropdown facet links and turn them into an option.
     $('.js-facets-dropdown-links').once('facets-dropdown-transform').each(function () {
-      var $ul = $(this);
-      var $links = $ul.find('.facet-item a');
-      var $dropdown = $('<select class="facets-dropdown" />').data($ul.data());
+      var $links = $(this).find('.facet-item a');
+      var $dropdown = $('<select class="facets-dropdown" />');
 
       // Add empty text option first.
-      var default_option_label = $ul.data('facet-default-option-label');
+      var default_option_label = $(this).data('facet-default-option-label');
       var $default_option = $('<option />')
         .attr('value', '')
         .text(default_option_label);
@@ -36,8 +35,7 @@
         var $link = $(this);
         var active = $link.hasClass('is-active');
         var $option = $('<option />')
-          .attr('value', $link.attr('href'))
-          .data($link.data());
+          .attr('value', $link.attr('href'));
         if (active) {
           has_active = true;
           // Set empty text value to this link to unselect facet.
@@ -46,12 +44,12 @@
           $option.attr('selected', 'selected');
           $link.find('.js-facet-deactivate').remove();
         }
-        $option.html($link.text().trim());
+        $option.html($link.html());
         $dropdown.append($option);
       });
 
       // Go to the selected option when it's clicked.
-      $dropdown.on('change.facets', function () {
+      $dropdown.on('change', function () {
         window.location.href = $(this).val();
       });
 
@@ -60,9 +58,8 @@
         $default_option.attr('selected', 'selected');
       }
 
-      // Replace links with dropdown.
-      $ul.after($dropdown).remove();
-      Drupal.attachBehaviors(document, Drupal.settings);
+      // Append dropdown.
+      $(this).html($dropdown);
     });
   };
 

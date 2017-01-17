@@ -45,9 +45,9 @@ class SearchApiString extends QueryTypePluginBase {
       $options = &$query->getOptions();
       $options['search_api_facets'][$field_identifier] = array(
         'field' => $field_identifier,
-        'limit' => $this->facet->getHardLimit(),
+        'limit' => 50,
         'operator' => $this->facet->getQueryOperator(),
-        'min_count' => $this->facet->getMinCount(),
+        'min_count' => 0,
         'missing' => FALSE,
       );
 

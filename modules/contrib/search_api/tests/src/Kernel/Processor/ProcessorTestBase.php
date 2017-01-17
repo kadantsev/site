@@ -109,12 +109,21 @@ abstract class ProcessorTestBase extends KernelTestBase {
       'name' => 'Index name',
       'status' => TRUE,
       'datasource_settings' => array(
-        'entity:comment' => array(),
-        'entity:node' => array(),
+        'entity:comment' => array(
+          'plugin_id' => 'entity:comment',
+          'settings' => array(),
+        ),
+        'entity:node' => array(
+          'plugin_id' => 'entity:node',
+          'settings' => array(),
+        ),
       ),
       'server' => 'server',
       'tracker_settings' => array(
-        'default' => array(),
+        'default' => array(
+          'plugin_id' => 'default',
+          'settings' => array(),
+        ),
       ),
     ));
     $this->index->setServer($this->server);
@@ -176,16 +185,6 @@ abstract class ProcessorTestBase extends KernelTestBase {
     }
 
     return $extracted_items;
-  }
-
-  /**
-   * Indexes all (unindexed) items.
-   *
-   * @return int
-   *   The number of successfully indexed items.
-   */
-  protected function indexItems() {
-    return $this->index->indexItems();
   }
 
 }

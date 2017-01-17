@@ -53,10 +53,16 @@ class BundlelessEntityTest extends KernelTestBase {
       'id' => 'test_index',
       'status' => FALSE,
       'datasource_settings' => array(
-        'entity:' . $this->testEntityTypeId => array(),
+        'entity:' . $this->testEntityTypeId => array(
+          'plugin_id' => 'entity:' . $this->testEntityTypeId,
+          'settings' => array(),
+        ),
       ),
       'tracker_settings' => array(
-        'default' => array(),
+        'default' => array(
+          'plugin_id' => 'default',
+          'settings' => array(),
+        ),
       ),
     ));
     $this->index->save();

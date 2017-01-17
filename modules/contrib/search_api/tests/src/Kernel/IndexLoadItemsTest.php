@@ -46,10 +46,16 @@ class IndexLoadItemsTest extends KernelTestBase {
     ));
     $this->index = Index::create(array(
       'tracker_settings' => array(
-        'search_api_test' => array(),
+        'search_api_test' => array(
+          'plugin_id' => 'search_api_test',
+          'settings' => array(),
+        ),
       ),
       'datasource_settings' => array(
-        'search_api_test' => array(),
+        'search_api_test' => array(
+          'plugin_id' => 'search_api_test',
+          'settings' => array(),
+        ),
       ),
     ));
     $this->index->setServer($server);

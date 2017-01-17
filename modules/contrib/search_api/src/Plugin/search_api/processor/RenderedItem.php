@@ -241,7 +241,7 @@ class RenderedItem extends ProcessorPluginBase {
 
     if (!$datasource) {
       $definition = array(
-        'type' => 'field_item:text_long.string',
+        'type' => 'text',
         'label' => $this->t('Rendered HTML output'),
         'description' => $this->t('The complete HTML which would be displayed when viewing the item'),
         'processor_id' => $this->getPluginId(),

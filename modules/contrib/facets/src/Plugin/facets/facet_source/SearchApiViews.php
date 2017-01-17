@@ -95,7 +95,7 @@ class SearchApiViews extends SearchApiBaseFacetSource implements SearchApiFacetS
   /**
    * {@inheritdoc}
    */
-  public function fillFacetsWithResults(array $facets) {
+  public function fillFacetsWithResults($facets) {
     // Check if there are results in the static cache.
     $results = $this->searchApiQueryHelper->getResults($this->pluginId);
 
@@ -174,11 +174,10 @@ class SearchApiViews extends SearchApiBaseFacetSource implements SearchApiFacetS
    */
   public function calculateDependencies() {
     $plugin_id_array = explode(':', $this->pluginId);
-    list($view_id,) = explode('__', $plugin_id_array[1]);
-    return [
-      'config' => ['views.view.' . $view_id],
-      'module' => ['views'],
-    ];
+    list($view_id, ) = explode('__', $plugin_id_array[1]);
+    $dependencies['config'] = ['views.view.' . $view_id];
+
+    return $dependencies;
   }
 
 }

@@ -93,10 +93,16 @@ class CliTest extends KernelTestBase {
       'id' => 'index',
       'status' => 1,
       'datasource_settings' => array(
-        'entity:entity_test_mulrev_changed' => array(),
+        'entity:entity_test_mulrev_changed' => array(
+          'plugin_id' => 'entity:entity_test_mulrev_changed',
+          'settings' => array(),
+        ),
       ),
       'tracker_settings' => array(
-        'default' => array(),
+        'default' => array(
+          'plugin_id' => 'default',
+          'settings' => array(),
+        ),
       ),
       'server' => $this->server->id(),
       'options' => array('index_directly' => TRUE),
@@ -112,14 +118,14 @@ class CliTest extends KernelTestBase {
     EntityTestMulRevChanged::create(array(
       'name' => 'foo bar baz föö smile',
       'body' => 'test test case Case casE',
-      'type' => 'entity_test_mulrev_changed',
+      'type' => 'item',
       'keywords' => array('strawberry', 'llama'),
       'category' => 'item_category',
     ))->save();
     EntityTestMulRevChanged::create(array(
       'name' => 'foo bar baz föö smile',
       'body' => 'test test case Case casE',
-      'type' => 'entity_test_mulrev_changed',
+      'type' => 'item',
       'keywords' => array('strawberry', 'llama'),
       'category' => 'item_category',
     ))->save();

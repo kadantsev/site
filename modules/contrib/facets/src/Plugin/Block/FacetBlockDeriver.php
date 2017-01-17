@@ -24,7 +24,7 @@ class FacetBlockDeriver implements ContainerDeriverInterface {
   /**
    * The entity storage used for facets.
    *
-   * @var \Drupal\Core\Entity\EntityStorageInterface
+   * @var \Drupal\Core\Entity\EntityStorageInterface $facetStorage
    */
   protected $facetStorage;
 

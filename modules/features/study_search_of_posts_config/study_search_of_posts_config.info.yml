@@ -12,7 +12,7 @@ dependencies:
   - search_api
   - search_api_db
   - search_api_solr
-  - search_of_posts_config
+  - study-search_of_posts_config
   - system
   - taxonomy
   - taxonomy_menu

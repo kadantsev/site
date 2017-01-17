@@ -61,10 +61,7 @@ abstract class WidgetPluginBase extends PluginBase implements WidgetPluginInterf
     return [
       '#theme' => 'item_list',
       '#items' => $items,
-      '#attributes' => [
-        'data-drupal-facet-id' => $facet->id(),
-        'data-drupal-facet-alias' => $facet->getUrlAlias(),
-      ],
+      '#attributes' => ['data-drupal-facet-id' => $facet->id()],
       '#cache' => [
         'contexts' => [
           'url.path',
@@ -101,7 +98,7 @@ abstract class WidgetPluginBase extends PluginBase implements WidgetPluginInterf
   /**
    * {@inheritdoc}
    */
-  public function getQueryType(array $query_types) {
+  public function getQueryType($query_types) {
     return $query_types['string'];
   }
 
@@ -135,41 +132,32 @@ abstract class WidgetPluginBase extends PluginBase implements WidgetPluginInterf
    */
   protected function buildListItems(ResultInterface $result) {
     $classes = ['facet-item'];
-    $items = $this->prepareLink($result);
+    if ($children = $result->getChildren()) {
+      $items = $this->prepareLink($result);
 
-    $children = $result->getChildren();
-    // Check if we need to expand this result.
-    if ($children && ($this->facet->getExpandHierarchy() || $result->isActive() || $result->hasActiveChildren())) {
-
-      $child_items = [];
-      $classes[] = 'facet-item--expanded';
+      $children_markup = [];
       foreach ($children as $child) {
-        $child_items[] = $this->buildListItems($child);
+        $children_markup[] = $this->buildChild($child);
       }
 
-      $items['children'] = [
-        '#theme' => 'item_list',
-        '#items' => $child_items,
-      ];
+      $classes[] = 'expanded';
+      $items['children'] = [$children_markup];
 
-      if ($result->hasActiveChildren()) {
-        $classes[] = 'facet-item--active-trail';
+      if ($result->isActive()) {
+        $items['#attributes'] = ['class' => 'active-trail'];
       }
-
     }
     else {
-      if ($children) {
-        $classes[] = 'facet-item--collapsed';
-      }
-    }
+      $items = $this->prepareLink($result);
 
-    if ($result->isActive()) {
-      $items['#attributes'] = ['class' => 'is-active'];
+      if ($result->isActive()) {
+        $items['#attributes'] = ['class' => 'is-active'];
+      }
     }
 
     $items['#wrapper_attributes'] = ['class' => $classes];
     $items['#attributes']['data-drupal-facet-item-id'] = $this->facet->getUrlAlias() . '-' . $result->getRawValue();
-    $items['#attributes']['data-drupal-facet-item-value'] = $result->getRawValue();
+
     return $items;
   }
 
@@ -189,6 +177,21 @@ abstract class WidgetPluginBase extends PluginBase implements WidgetPluginInterf
       $item = (new Link($item, $result->getUrl()))->toRenderable();
     }
 
+    return $item;
+  }
+
+  /**
+   * Builds a result item as a render array.
+   *
+   * @param \Drupal\facets\Result\ResultInterface $child
+   *   A result item.
+   *
+   * @return array
+   *   The result item as render array.
+   */
+  protected function buildChild(ResultInterface $child) {
+    $item = $this->prepareLink($child);
+    $item['#wrapper_attributes'] = ['class' => ['leaf']];
     return $item;
   }
 

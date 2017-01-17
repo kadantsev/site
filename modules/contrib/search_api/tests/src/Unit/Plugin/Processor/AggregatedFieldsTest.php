@@ -250,9 +250,9 @@ class AggregatedFieldsTest extends UnitTestCase {
   /**
    * Tests whether the properties are correctly altered.
    *
-   * @see \Drupal\search_api\Plugin\search_api\processor\AggregatedField::getPropertyDefinitions()
+   * @see \Drupal\search_api\Plugin\search_api\processor\AggregatedField::alterPropertyDefinitions()
    */
-  public function testGetPropertyDefinitions() {
+  public function testAlterPropertyDefinitions() {
     /** @var \Drupal\Core\StringTranslation\TranslationInterface $translation */
     $translation = $this->getStringTranslationStub();
     $this->processor->setStringTranslation($translation);

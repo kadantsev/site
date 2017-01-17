@@ -8,8 +8,6 @@ use Drupal\facets\FacetInterface;
 use Drupal\search_api\Backend\BackendInterface;
 use Drupal\facets\FacetSource\FacetSourcePluginBase;
 use Drupal\search_api\FacetsQueryTypeMappingInterface;
-use Drupal\search_api\Utility\QueryHelper;
-use Drupal\facets\QueryType\QueryTypePluginManager;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -32,20 +30,9 @@ abstract class SearchApiBaseFacetSource extends FacetSourcePluginBase {
   protected $searchApiQueryHelper;
 
   /**
-   * Constructs a SearchApiBaseFacetSource object.
-   *
-   * @param array $configuration
-   *   A configuration array containing information about the plugin instance.
-   * @param string $plugin_id
-   *   The plugin_id for the plugin instance.
-   * @param mixed $plugin_definition
-   *   The plugin implementation definition.
-   * @param \Drupal\facets\QueryType\QueryTypePluginManager $query_type_plugin_manager
-   *   The query type plugin manager.
-   * @param \Drupal\search_api\Utility\QueryHelper $search_results_cache
-   *   The query type plugin manager.
+   * {@inheritdoc}
    */
-  public function __construct(array $configuration, $plugin_id, $plugin_definition, QueryTypePluginManager $query_type_plugin_manager, QueryHelper $search_results_cache) {
+  public function __construct(array $configuration, $plugin_id, array $plugin_definition, $query_type_plugin_manager, $search_results_cache) {
     parent::__construct($configuration, $plugin_id, $plugin_definition, $query_type_plugin_manager);
     // Since defaultConfiguration() depends on the plugin definition, we need to
     // override the constructor and set the definition property before calling
@@ -60,13 +47,12 @@ abstract class SearchApiBaseFacetSource extends FacetSourcePluginBase {
    * {@inheritdoc}
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
-    return new static(
-      $configuration,
-      $plugin_id,
-      $plugin_definition,
-      $container->get('plugin.manager.facets.query_type'),
-      $container->get('search_api.query_helper')
-    );
+    /** @var \Drupal\facets\QueryType\QueryTypePluginManager $query_type_plugin_manager */
+    $query_type_plugin_manager = $container->get('plugin.manager.facets.query_type');
+
+    /** @var \Drupal\search_api\Utility\QueryHelper $query_helper */
+    $query_helper = $container->get('search_api.query_helper');
+    return new static($configuration, $plugin_id, $plugin_definition, $query_type_plugin_manager, $query_helper);
   }
 
   /**
@@ -104,6 +90,7 @@ abstract class SearchApiBaseFacetSource extends FacetSourcePluginBase {
     }
     return $indexed_fields;
   }
+
 
   /**
    * {@inheritdoc}
@@ -147,19 +134,15 @@ abstract class SearchApiBaseFacetSource extends FacetSourcePluginBase {
    */
   public function getQueryTypesForDataType(BackendInterface $backend, $data_type_plugin_id) {
     $query_types = [];
-    $query_types['string'] = 'search_api_string';
-
-    // Add additional query types for specific data types.
+    // @todo Make this flexible for each data type in Search API.
     switch ($data_type_plugin_id) {
+      case 'boolean':
       case 'date':
-        $query_types['date'] = 'search_api_date';
-        break;
-
       case 'decimal':
       case 'integer':
-        $query_types['numeric'] = 'search_api_granular';
+      case 'string':
+        $query_types['string'] = 'search_api_string';
         break;
-
     }
 
     // Find out if the backend implemented the Interface to retrieve specific

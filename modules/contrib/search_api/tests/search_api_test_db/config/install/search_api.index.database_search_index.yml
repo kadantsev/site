@@ -46,22 +46,32 @@ field_settings:
     property_path: width
 processor_settings:
   add_url:
-    weights:
-      preprocess_index: -30
+    plugin_id: add_url
+    settings:
+      weights:
+        preprocess_index: -30
   aggregated_field:
-    weights:
-      add_properties: 20
+    plugin_id: aggregated_field
+    settings:
+      weights:
+        add_properties: 20
   rendered_item:
-    weights:
-      add_properties: 0
-      pre_index_save: -10
+    plugin_id: rendered_item
+    settings:
+      weights:
+        add_properties: 0
+        pre_index_save: -10
 options:
   cron_limit: -1
   index_directly: false
 datasource_settings:
-  'entity:entity_test_mulrev_changed': {  }
+  'entity:entity_test_mulrev_changed':
+    plugin_id: 'entity:entity_test_mulrev_changed'
+    settings: {  }
 tracker_settings:
-  'default': { }
+  'default':
+    plugin_id: default
+    settings: { }
 server: database_search_server
 status: true
 langcode: en
