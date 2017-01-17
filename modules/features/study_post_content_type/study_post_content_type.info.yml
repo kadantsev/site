@@ -17,7 +17,7 @@ dependencies:
   - node
   - paragraphs
   - path
-  - post_content_type
+  - study_post_content_type
   - study_search_of_posts_config
   - taxonomy
   - text
