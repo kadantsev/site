@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.place
+    - views.view.posts
+  module:
+    - ctools
+    - panels
+    - views
+id: place-panels_variant-1
+label: Post
+variant: panels_variant
+variant_settings:
+  blocks:
+    a99b48b0-217a-4e01-9446-d2e7005aefa7:
+      id: 'views_block:posts-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: 0
+      uuid: a99b48b0-217a-4e01-9446-d2e7005aefa7
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 92c18e23-1042-4517-a9be-793368fa79a7
+  label: null
+  weight: 0
+  layout: bs_1col
+  layout_settings:
+    layout:
+      wrapper: div
+      classes:
+        row: row
+      attributes: ''
+      add_layout_class: 1
+    regions:
+      main:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+  page_title: ''
+  storage_type: page_manager
+  storage_id: place-panels_variant-1
+  builder: standard
+page: place
+weight: 0
+selection_criteria:
+  -
+    id: 'entity_bundle:node'
+    bundles:
+      post: post
+    negate: false
+    context_mapping:
+      node: node
+selection_logic: and
+static_context: {  }

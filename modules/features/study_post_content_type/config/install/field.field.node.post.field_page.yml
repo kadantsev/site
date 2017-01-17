@@ -2,24 +2,24 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_page
+    - node.type.page
     - node.type.post
-    - taxonomy.vocabulary.tags
-id: node.post.field_tags
-field_name: field_tags
+id: node.post.field_page
+field_name: field_page
 entity_type: node
 bundle: post
-label: Tags
+label: Page
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:taxonomy_term'
+  handler: 'default:node'
   handler_settings:
     target_bundles:
-      tags: tags
+      page: page
     sort:
       field: _none
     auto_create: false

@@ -6,6 +6,7 @@ dependencies:
   - block
   - ckeditor
   - comment
+  - ctools
   - datetime
   - editor
   - entity_reference_revisions
@@ -15,6 +16,8 @@ dependencies:
   - link
   - menu_ui
   - node
+  - page_manager
+  - panels
   - paragraphs
   - path
   - study_post_content_type
@@ -22,5 +25,6 @@ dependencies:
   - taxonomy
   - text
   - user
+  - video_embed_field
   - views
 version: 8.x
