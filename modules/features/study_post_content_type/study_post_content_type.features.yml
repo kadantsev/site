@@ -1,8 +1,12 @@
 excluded:
   - core.base_field_override.node.post.promote
   - core.entity_view_display.node.post.default
+  - core.entity_view_display.node.post.teaser
+  - core.entity_view_display.node.post.teaser_with_link
+  - core.entity_view_display.paragraph.video.default
   - image.style.280x210
-  - field.field.node.post.field_page
   - field.field.paragraph.video.field_video
   - field.field.paragraph.video.field_vimeo
+  - core.entity_form_display.node.post.default
+  - core.entity_form_display.paragraph.video.default
 required: true
