@@ -10,4 +10,5 @@ excluded:
   - field.field.node.post.field_page
   - core.entity_form_display.paragraph.video.default
   - core.entity_form_display.node.post.default
+  - views.view.taxonomy_term
 required: true
