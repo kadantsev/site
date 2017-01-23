@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 280x210
+label: 280x210
+effects:
+  fd0cd1c7-2565-441e-bf23-85492cfb2b14:
+    uuid: fd0cd1c7-2565-441e-bf23-85492cfb2b14
+    id: image_scale_and_crop
+    weight: -9
+    data:
+      width: 280
+      height: 210
+  e3f9bc8a-4e4c-4d58-b052-3cb36b281caf:
+    uuid: e3f9bc8a-4e4c-4d58-b052-3cb36b281caf
+    id: image_resize
+    weight: -10
+    data:
+      width: 280
+      height: 210

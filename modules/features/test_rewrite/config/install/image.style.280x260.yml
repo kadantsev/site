@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 280x260
+label: 280x260
+effects:
+  0f1ce8c1-b8ab-49a1-b845-d753f24a14d8:
+    uuid: 0f1ce8c1-b8ab-49a1-b845-d753f24a14d8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 280
+      height: 260

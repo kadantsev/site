@@ -6,12 +6,17 @@ dependencies:
   - block
   - captcha
   - comment
+  - datetime
+  - entity_reference_revisions
   - facets
   - field
+  - image
+  - link
   - node
   - search_api
   - search_api_db
   - search_api_solr
+  - study_post_content_type
   - study_search_of_posts_config
   - system
   - taxonomy

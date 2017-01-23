@@ -1,0 +1,17 @@
+name: 'test rewrite'
+type: module
+core: 8.x
+dependencies:
+  - background_image_formatter
+  - block
+  - image
+  - node
+  - page_manager
+  - panels
+  - study_post_content_type
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+version: 8.x

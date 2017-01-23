@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 64x64
+label: 64x64
+effects:
+  f8c03ba5-9656-4241-ab6b-4f0ab52a7398:
+    uuid: f8c03ba5-9656-4241-ab6b-4f0ab52a7398
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 64
+      height: 64

@@ -1,0 +1,101 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.home
+    - views.view.blog
+    - views.view.categories
+    - views.view.features
+    - views.view.listings_everywhere
+    - views.view.most_recent_listings
+  module:
+    - panels
+    - views
+id: home-panels_variant-0
+label: Home
+variant: panels_variant
+variant_settings:
+  blocks:
+    1dae01fd-764d-46e6-9960-f17c1e16c3e2:
+      id: 'views_block:most_recent_listings-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: -2
+      uuid: 1dae01fd-764d-46e6-9960-f17c1e16c3e2
+      context_mapping: {  }
+    eaadeeee-5639-49d8-a8c7-5eb89648a49b:
+      id: 'views_block:listings_everywhere-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: -1
+      uuid: eaadeeee-5639-49d8-a8c7-5eb89648a49b
+      context_mapping: {  }
+    eb8a3b52-f25f-4721-9975-915d0aac136b:
+      id: 'views_block:categories-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: 0
+      uuid: eb8a3b52-f25f-4721-9975-915d0aac136b
+      context_mapping: {  }
+    9c47b509-3eb2-472d-bdfd-5b4d642141a4:
+      id: 'views_block:features-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: 1
+      uuid: 9c47b509-3eb2-472d-bdfd-5b4d642141a4
+      context_mapping: {  }
+    9646880e-4425-4f06-91bf-589afd95bb67:
+      id: 'views_block:blog-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: main
+      weight: 2
+      uuid: 9646880e-4425-4f06-91bf-589afd95bb67
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 84053398-b6b3-4f8c-8549-1f0a6181fda0
+  label: null
+  weight: 0
+  layout: bs_1col
+  layout_settings:
+    layout:
+      wrapper: div
+      classes:
+        row: row
+      attributes: ''
+      add_layout_class: 0
+    regions:
+      main:
+        wrapper: div
+        classes:
+          col-xs-12: col-xs-12
+        add_region_classes: 0
+        attributes: ''
+  page_title: ''
+  storage_type: page_manager
+  storage_id: home-panels_variant-0
+  builder: standard
+page: home
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
