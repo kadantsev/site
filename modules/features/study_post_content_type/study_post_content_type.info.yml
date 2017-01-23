@@ -13,6 +13,8 @@ dependencies:
   - field
   - filter
   - image
+  - image_popup
+  - language
   - link
   - menu_ui
   - node
@@ -23,6 +25,7 @@ dependencies:
   - study_post_content_type
   - study_search_of_posts_config
   - taxonomy
+  - test_rewrite
   - text
   - user
   - video_embed_field

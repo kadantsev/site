@@ -13,10 +13,10 @@ dependencies:
     - field.field.node.post.field_site
     - field.field.node.post.field_tags
     - field.field.node.post.field_video
+    - image.style.250x250
     - node.type.post
   module:
     - image
-    - link
     - text
     - user
 id: node.post.teaser_with_link
@@ -26,31 +26,21 @@ mode: teaser_with_link
 content:
   body:
     label: hidden
-    type: text_default
+    type: text_trimmed
     weight: 1
-    settings: {  }
+    settings:
+      trim_length: 300
     third_party_settings: {  }
   field_image:
     weight: 0
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: 250x250
       image_link: ''
     third_party_settings: {  }
     type: image
-  field_site:
-    weight: 2
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
   links:
-    weight: 3
+    weight: 2
     settings: {  }
     third_party_settings: {  }
 hidden:
@@ -59,6 +49,7 @@ hidden:
   field_date: true
   field_email: true
   field_page: true
+  field_site: true
   field_tags: true
   field_video: true
   langcode: true

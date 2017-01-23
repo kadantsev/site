@@ -246,6 +246,25 @@ display:
         weight: 12
         context: '0'
         menu_name: main
+      style:
+        type: default
+        options: {  }
+      defaults:
+        style: false
+        row: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        show_admin_links: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser_with_link
+      use_more: false
+      use_more_always: true
+      use_more_text: more
+      show_admin_links: true
     cache_metadata:
       max-age: -1
       contexts:

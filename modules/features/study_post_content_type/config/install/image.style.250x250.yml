@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 250x250
+label: 250x250
+effects:
+  14b10bd1-6ca3-4c6e-bc27-07f460f9e06d:
+    uuid: 14b10bd1-6ca3-4c6e-bc27-07f460f9e06d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 250
