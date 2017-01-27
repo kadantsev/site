@@ -1,0 +1,4 @@
+name: Exchange Rate
+type: module
+description: Display current exchange rate
+core: 8.x

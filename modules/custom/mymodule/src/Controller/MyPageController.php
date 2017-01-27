@@ -12,9 +12,8 @@ use Drupal\Core\Controller\ControllerBase;
 
 class MyPageController extends ControllerBase {
     public function customPage() {
-        return [
+         return [
             '#markup' => t('Welcome to my custom page!'),
         ];
     }
 }
-

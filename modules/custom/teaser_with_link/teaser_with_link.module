@@ -1,0 +1,15 @@
+<?php
+
+function teaser_with_link_node_links_alter(array &$links, \Drupal\node\NodeInterface $entity, array &$context) {
+    $a=1;
+//    $links['teaser_with_link'] = array(
+//        '#theme' => 'links__node__teaser_with_link',
+//        '#attributes' => array('class' => array('links', 'inline')),
+//        '#links' => array(
+//            'node-report' => array(
+//                'title' => t('Report'),
+//                'url' => Url::fromRoute('', ['node' => $entity->id()], ['query' => ['token' => \Drupal::getContainer()->get('csrf_token')->get("node/{$entity->id()}/report")]]),
+//            ),
+//        ),
+//    );
+}
