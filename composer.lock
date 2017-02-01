@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "70f2ed7a4f0156b2368719ec10c4dd05",
-    "content-hash": "0a306b33f083573a6c7a371c4645a94a",
+    "hash": "4404b237154d46dace7cbc4aeffd0987",
+    "content-hash": "abb25d8a66cb4c6572fb57804056b1d1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1324,6 +1324,29 @@
                 "stack"
             ],
             "time": "2016-06-02 06:58:42"
+        },
+        {
+            "name": "stil/xpath-selector",
+            "version": "2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stil/xpath-selector.git",
+                "reference": "06b40813095e14ddc0c4dbf7e7108f83279514d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stil/xpath-selector/zipball/06b40813095e14ddc0c4dbf7e7108f83279514d7",
+                "reference": "06b40813095e14ddc0c4dbf7e7108f83279514d7",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XPathSelector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2014-12-08 16:54:18"
         },
         {
             "name": "symfony-cmf/routing",

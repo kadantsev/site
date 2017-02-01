@@ -4369,97 +4369,6 @@
         ]
     },
     {
-        "name": "drupal/search_api",
-        "version": "8.1.0-beta4",
-        "version_normalized": "8.1.0.0-beta4",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupal.org/project/search_api",
-            "reference": "008941adbf48434b0b28c97ec347a44f11b2a98b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-beta4.zip",
-            "reference": null,
-            "shasum": null
-        },
-        "require": {
-            "drupal/core": "8.*",
-            "drupal/system": ">=8.2.0"
-        },
-        "replace": {
-            "drupal/search_api_db": "self.version",
-            "drupal/search_api_db_defaults": "self.version",
-            "drupal/search_api_views_taxonomy": "self.version"
-        },
-        "suggest": {
-            "drupal/core": "Required by drupal/search_api_db, drupal/search_api_db_defaults, drupal/search_api_views_taxonomy"
-        },
-        "time": "2017-01-01 16:00:41",
-        "type": "drupal-module",
-        "extra": {
-            "branch-alias": {
-                "dev-8.x-1.x": "8.1.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.drupal-composer.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "Thomas Seidl",
-                "homepage": "https://www.drupal.org/u/drunken-monkey"
-            },
-            {
-                "name": "Nick Veenhof",
-                "homepage": "https://www.drupal.org/u/nick_vh"
-            },
-            {
-                "name": "See other contributors",
-                "homepage": "https://www.drupal.org/node/790418/committers"
-            }
-        ],
-        "description": "Provides a generic framework for modules offering search capabilities.",
-        "homepage": "https://www.drupal.org/project/search_api"
-    },
-    {
-        "name": "drupal/search_api_solr",
-        "version": "dev-8.x-1.x",
-        "version_normalized": "dev-8.x-1.x",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupal.org/project/search_api_solr",
-            "reference": "3a2f695353971a8db79e5aa083180f31acb67940"
-        },
-        "require": {
-            "drupal/core": "8.*",
-            "drupal/search_api": "8.*",
-            "solarium/solarium": "3.7.*"
-        },
-        "replace": {
-            "drupal/search_api_solr_defaults": "self.version"
-        },
-        "suggest": {
-            "drupal/core": "Required by drupal/search_api_solr_defaults"
-        },
-        "time": "2016-12-24 00:45:38",
-        "type": "drupal-module",
-        "extra": {
-            "branch-alias": {
-                "dev-8.x-1.x": "8.1.x-dev"
-            }
-        },
-        "installation-source": "source",
-        "notification-url": "https://packagist.drupal-composer.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "description": "Offers an implementation of the Search API that uses an Apache Solr server for indexing content.",
-        "homepage": "https://www.drupal.org/project/search_api_solr"
-    },
-    {
         "name": "jcalderonzumba/gastonjs",
         "version": "v1.0.2",
         "version_normalized": "1.0.2.0",
@@ -4654,5 +4563,121 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "drupal/search_api",
+        "version": "8.1.0-beta4",
+        "version_normalized": "8.1.0.0-beta4",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/search_api",
+            "reference": "008941adbf48434b0b28c97ec347a44f11b2a98b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-beta4.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/core": "8.*",
+            "drupal/system": ">=8.2.0"
+        },
+        "replace": {
+            "drupal/search_api_db": "self.version",
+            "drupal/search_api_db_defaults": "self.version",
+            "drupal/search_api_views_taxonomy": "self.version"
+        },
+        "suggest": {
+            "drupal/core": "Required by drupal/search_api_db, drupal/search_api_db_defaults, drupal/search_api_views_taxonomy"
+        },
+        "time": "2017-01-01 16:00:41",
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-8.x-1.x": "8.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Thomas Seidl",
+                "homepage": "https://www.drupal.org/u/drunken-monkey"
+            },
+            {
+                "name": "Nick Veenhof",
+                "homepage": "https://www.drupal.org/u/nick_vh"
+            },
+            {
+                "name": "See other contributors",
+                "homepage": "https://www.drupal.org/node/790418/committers"
+            }
+        ],
+        "description": "Provides a generic framework for modules offering search capabilities.",
+        "homepage": "https://www.drupal.org/project/search_api"
+    },
+    {
+        "name": "drupal/search_api_solr",
+        "version": "dev-8.x-1.x",
+        "version_normalized": "dev-8.x-1.x",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupal.org/project/search_api_solr",
+            "reference": "3a2f695353971a8db79e5aa083180f31acb67940"
+        },
+        "require": {
+            "drupal/core": "8.*",
+            "drupal/search_api": "8.*",
+            "solarium/solarium": "3.7.*"
+        },
+        "replace": {
+            "drupal/search_api_solr_defaults": "self.version"
+        },
+        "suggest": {
+            "drupal/core": "Required by drupal/search_api_solr_defaults"
+        },
+        "time": "2016-12-24 00:45:38",
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-8.x-1.x": "8.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "https://packagist.drupal-composer.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "description": "Offers an implementation of the Search API that uses an Apache Solr server for indexing content.",
+        "homepage": "https://www.drupal.org/project/search_api_solr"
+    },
+    {
+        "name": "stil/xpath-selector",
+        "version": "2.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stil/xpath-selector.git",
+            "reference": "06b40813095e14ddc0c4dbf7e7108f83279514d7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stil/xpath-selector/zipball/06b40813095e14ddc0c4dbf7e7108f83279514d7",
+            "reference": "06b40813095e14ddc0c4dbf7e7108f83279514d7",
+            "shasum": ""
+        },
+        "time": "2014-12-08 16:54:18",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "XPathSelector\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/"
     }
 ]
