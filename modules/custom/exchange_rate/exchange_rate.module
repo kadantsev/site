@@ -1,0 +1,16 @@
+<?php
+
+
+function exchange_rate_theme($existing, $type, $theme, $path) {
+return array('exchange_rate' =>
+        array(
+            'variables' => array(
+                'row' => null,
+                'flag' => null,
+                'currency' => null,
+                'buy' => null,
+                'sell' => null
+            ),
+        ),
+    );
+}

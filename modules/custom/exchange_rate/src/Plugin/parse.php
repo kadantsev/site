@@ -1,7 +1,7 @@
 <?php
 
-//namespace Parse;
-require_once 'vendor/autoload.php';
+namespace Drupal\exchange_rate\Plugin;
+//require_once 'vendor/autoload.php';
 use XPathSelector\Selector;
 
 
