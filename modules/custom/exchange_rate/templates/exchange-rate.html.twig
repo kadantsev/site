@@ -1,0 +1,15 @@
+<div class = "wrapper">
+    <div class = "block-row">
+        <div class = "curency">{{ head.0 }}</div>
+        <div class = "buy">{{ head.1 }}</div>
+        <div class = "sell">{{ head.2 }}</div>
+    </div>
+{% for item in content %}
+    <div class = "block-row">
+        <div class = "flag"><img src={{ item.flag }}></div>
+        <div class = "currency">{{ item.currency }}</div>
+        <div class = "buy">{{ item.buy }}</div>
+        <div class = "sell">{{ item.sell }}</div>
+    </div>
+{% endfor %}
+</div>

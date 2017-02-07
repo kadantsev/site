@@ -1,0 +1,19 @@
+.flag, .currency, .buy, .sell {
+    width: 23%;
+    display: inline-block;
+    text-align: center;
+}
+.curency {
+    width: 46%;
+    display: inline-block;
+    text-align: center;
+}
+.block-row {
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+
+.flag img {
+    max-width: 100%;
+}
