@@ -1,32 +1,21 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: kadantsew
+ * Date: 08.02.17
+ * Time: 13:45
+ */
 namespace Drupal\exchange_rate;
 use XPathSelector\Selector;
 
-
-
-
-class Rate {
-    protected $site;
+class GoverlaRate {
+    protected $site = 'https://goverla.ua';
     protected $html;
-    protected $row;
-    protected $flag;
-    protected $currency;
-    protected $buy;
-    protected $sell;
-
-
-    public function __construct($URL) {
-        $this->site  = $URL;
-    }
-
-    public function setSelector ($row, $flag, $currency, $buy, $sell) {
-        $this->row = $row;
-        $this->flag = $flag;
-        $this->currency = $currency;
-        $this->buy = $buy;
-        $this->sell = $sell;
-    }
+    protected $row = "//div[contains(@id,'rates')]//div//div//div//div//div[contains(@class,'gvrl-table-body')]//div[contains(@class,'gvrl-table-row')]";
+    protected $flag = "div/img/@src";
+    protected $currency = "div/img/@alt";
+    protected $buy = "div[2]";
+    protected $sell = "div[3]";
 
     public function getRate () {
 

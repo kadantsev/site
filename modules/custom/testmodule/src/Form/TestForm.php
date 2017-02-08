@@ -43,7 +43,10 @@ use Drupal\Core\Form\FormStateInterface;
           '#type' => 'submit',
             '#value' => 'Submit',
         );
-
+        $form['markup'] = array(
+            '#type' => 'markup',
+            '#value' => \Drupal::service('renderer')->render($content),
+        );
         return $form;
     }
 

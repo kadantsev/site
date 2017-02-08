@@ -4,7 +4,10 @@ namespace Drupal\exchange_rate\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\exchange_rate\Rate;
+//use Drupal\exchange_rate\Rate;
+use Drupal\exchange_rate\GoverlaRate;
+use Drupal\exchange_rate\KantorRate;
+use Drupal\exchange_rate\ExpresRate;
 
 /**
  * @Block(
@@ -36,9 +39,9 @@ class Exchange_Rate extends BlockBase {
             '#type' => 'select',
             '#title' => t('Service'),
             '#options' => array(
-                0 => 'kantor.com.ua',
-                1 => 'goverla.ua',
-                2 => 'express.lutsk.ua',
+                'Kantor' => 'kantor.com.ua',
+                'Goverla' => 'goverla.ua',
+                'Expres' => 'express.lutsk.ua',
             ),
             '#default_value' => $this->configuration['services'],
         ];
@@ -57,23 +60,9 @@ class Exchange_Rate extends BlockBase {
      */
     public function build()
     {
-        switch ($this->configuration['services']) {
-            case 0:
-                $cantor = new Rate('http://kantor.com.ua');
-                $cantor->setSelector('//tbody/tr', "td/img/@src", "td/span", "td[2]", "td[3]");
-                $result = $cantor->getRate();
-                break;
-            case 1:
-                $cantor = new Rate('https://goverla.ua');
-                $cantor->setSelector("//div[contains(@id,'rates')]//div//div//div//div//div[contains(@class,'gvrl-table-body')]//div[contains(@class,'gvrl-table-row')]", "div/img/@src", "div/img/@alt", "div[2]", "div[3]");
-                $result = $cantor->getRate();
-                break;
-            case 2:
-                $express = new Rate('http://express.lutsk.ua');
-                $express->setSelector('//table[1]/tbody/tr[position()>1]', "td/img/@src", "td[2]", "td[3]", "td[4]");
-                $result = $express->getRate();
-                break;
-        }
+        $classname = '\Drupal\exchange_rate\\'. $this->configuration['services'] .'Rate';
+        $cantor = new $classname;
+        $result = $cantor->getRate();
 
         return array (
             '#theme' => 'exchange_rate',
