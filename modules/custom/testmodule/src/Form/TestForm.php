@@ -33,9 +33,6 @@ use Drupal\Core\Form\FormStateInterface;
             '#type' => 'select',
             '#title' => t('Change the source'),
              '#options' => array(
-                'kantor' => 'kantor.com.ua',
-                'goverla' => 'goverla.ua',
-                'express' => 'express.lutsk.ua',
             ),
         );
 
@@ -43,10 +40,7 @@ use Drupal\Core\Form\FormStateInterface;
           '#type' => 'submit',
             '#value' => 'Submit',
         );
-        $form['markup'] = array(
-            '#type' => 'markup',
-            '#value' => \Drupal::service('renderer')->render($content),
-        );
+
         return $form;
     }
 
@@ -54,7 +48,7 @@ use Drupal\Core\Form\FormStateInterface;
      * {@inheritdoc}
      */
     public function submitForm(array &$form, FormStateInterface $form_state) {
-        drupal_set_message($this->t('Your service is @services', array('@services' => $form['services']['#options'][$form_state->getValue('services')])));
+
     }
 
 }

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - exchange_rate
+    - facets
+    - system
+  theme:
+    - new_subtheme
+id: exchange_rate_form_2
+theme: new_subtheme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: exchange_rate_form_block
+settings:
+  id: exchange_rate_form_block
+  label: Exchange_Rate_Form
+  provider: exchange_rate
+  label_display: visible
+visibility:
+  other_facet:
+    id: other_facet
+    facets: ''
+    facet_value: ''
+    negate: false
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

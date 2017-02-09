@@ -24,10 +24,9 @@ class Testblock extends BlockBase {
      * {@inheritdoc}
      */
     public function build() {
-        $content = \Drupal::formBuilder()->getForm('Drupal\testmodule\Form\TestForm');
-        $output = \Drupal::service('renderer')->render($content);
+
         return array(
-            '#markup' => $output,
+            '#markup' => 'Hello!',
         );
     }
 

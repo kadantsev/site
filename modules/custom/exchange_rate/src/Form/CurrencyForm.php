@@ -52,7 +52,8 @@ use Drupal\Core\Url;
                 '#value' => 'Submit',
             );
             $param = \Drupal::request()->query->all();
-            if (array_key_exists($param['services'], $form['services']['#options'])) {
+            $a =1;
+            if ($param!=null && array_key_exists($param['services'], $form['services']['#options'])) {
 
                 $classname = '\Drupal\exchange_rate\\' . $param['services'] . 'Rate';
                 $cantor = new $classname;
@@ -93,7 +94,6 @@ use Drupal\Core\Url;
     public function submitForm(array &$form, FormStateInterface $form_state) {
         $url = Url::fromRoute('<current>');
         $route_name = $url->getRouteName();
-        $a =1;
         $form_state->setRedirect($route_name, ['services' => $form_state->getValue('services')]);
 
         drupal_set_message($this->t('Your service is @services', array('@services' => $form['services']['#options'][$form_state->getValue('services')])));
