@@ -1,0 +1,4 @@
+name: Open Weather
+type: module
+description: Provide information about weather from 'openweathermap.org'.
+core: 8.x

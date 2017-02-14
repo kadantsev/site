@@ -1,0 +1,4 @@
+main:
+  css:
+    theme:
+      css/open_weather.main.css: {}

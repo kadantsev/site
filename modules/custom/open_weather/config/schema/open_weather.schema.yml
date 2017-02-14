@@ -1,0 +1,7 @@
+open_weather.api:
+  type: config_object
+  label: 'Open weather form settings'
+  mapping:
+    api_key:
+      type: string
+      label: 'API Key'

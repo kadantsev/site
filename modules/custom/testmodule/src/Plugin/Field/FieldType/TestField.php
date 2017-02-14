@@ -20,7 +20,7 @@ use Drupal\Core\TypedData\DataDefinition;
  *  description = @Translation("This field stores..."),
  *  category = @Translation("General"),
  *  default_widget = "testfield_default",
- *  default_formatter = "string"
+ *  default_formatter = "testfield_one_line"
  * )
  */
 

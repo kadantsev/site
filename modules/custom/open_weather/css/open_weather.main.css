@@ -1,0 +1,21 @@
+ .weather, .info {
+    display: inline-block;
+     vertical-align: middle;
+}
+ .info img {
+     max-width: 1.5em;
+     max-height: 1em;
+ }
+ .info a {
+     font-weight: bold;
+     color: #d26c22;
+     text-decoration: underline;
+ }
+ .info span {
+     padding: 3px 7px;
+     background-color: #999;
+     font-weight: 700;
+     color: #fff;
+     -webkit-border-radius: 10px;
+     border-radius: 10px;
+ }

@@ -1,0 +1,10 @@
+<div class = "open-weather">
+    <div class = "weather">
+        <img src = "http://openweathermap.org/img/w/{{ content.weather.0.icon }}.png">
+    </div>
+    <div class = "info">
+        <p><a target = "_blank" href = "https://openweathermap.org/city/{{ content.id }}">{{ content.name }}, {{ content.sys.country }}</a> <img src = "http://openweathermap.org/images/flags/{{ content.sys.country|lower }}.png" class = "flag"></p>
+        <p>{{ content.weather.0.main }}: {{ content.weather.0.description }}</p>
+        <p><span>{{ content.main.temp|round(1, 'ceil') }}&deg;C</span> from {{ content.main.temp_min|round(1, 'ceil') }} to {{ content.main.temp_max|round(1, 'ceil') }}, wind {{ content.wind.speed }}m/s, clouds {{ content.clouds.all }} %</p>
+    </div>
+</div>

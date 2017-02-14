@@ -6,7 +6,7 @@
  * Time: 12:10
  */
 
-namespace Drupal\testmodule\Field\FieldWidget;
+namespace Drupal\testmodule\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -15,19 +15,18 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Plugin implementation of the 'test_default' widget.
  *
- * @FieldWidget (
- *  id = "testfield_default",
- *  label = @Translation("Test Field"),
- *     field_types = {
- *          "testfield"
- *     }
+ * @FieldWidget(
+ *   id = "testfield_default",
+ *   label = @Translation("Text field"),
+ *   field_types = {
+ *     "testfield"
+ *   },
  * )
  */
-
 class TestFieldDefaultWidget extends WidgetBase {
 
     /**
-     *   {@inheritdoc}
+     * {@inheritdoc}
      */
 
     public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state)
